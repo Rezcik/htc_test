@@ -16,7 +16,6 @@ nav {
 .nav-btn_active {
   color: #E5261E;
   border-bottom: 2px solid #E5261E;
-  padding-bottom: 9px;
   outline-style: none !important;
   outline-width: 0 !important;
   outline-color: unset !important;

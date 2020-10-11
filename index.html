@@ -12,21 +12,17 @@
                 <img class="logo-img" src="image/video-logo.png" alt="video-logo">
                 <h1 class="logo-text">Видеосервис</h1>
             </div>
-
             <div class="search-wrap">
                 <input class="input-search" placeholder="Поиск..." maxlength="30">
                 <button class="btn-search">Найти</button>
             </div>
-
-            <div class="login-wrap">
-                <input class="login-input deactive" placeholder="########">
-                <button class="login-btn-exit deactive">Выйти</button>
-                <button class="login-modal-btn login-modal-btn-js ">Войти</button>
+            <div class="btn-wrap">
+                <button class="modal-btn">Войти</button>
             </div>
         </header>
         <nav>
-            <button class="nav-btn tab_film nav-btn_active">Фильмы</button>
-            <button class="nav-btn tab_tv">Телеканалы</button>
+            <button class="nav-btn tab_film-js nav-btn_active">Фильмы</button>
+            <button class="nav-btn tab_tv-js">Телеканалы</button>
         </nav>
         <main>
             <section class="section-content_film">
@@ -206,37 +202,18 @@
                 </section>
             </div>
         </footer>
-
-
-        <div class="modal-btn_mobile modal-btn_mobile-js">
-            <p class="btn_text_mobile-js">Войти</p>
-            <div class="modal-wrap_mobile-js ">
-                <form class="modal-form_mobile modal-wrap_mobile-js">
-                    <input class="modal-input_mobile" placeholder="Логин" type="text" required>
-                    <input class="modal-input_mobile" placeholder="Пароль" type="password" required>
-                    <input class="check-modal" type="checkbox" id="checkbox-id_mobile" />
-                    <label for="checkbox-id_mobile" class="modal-label_mobile">Запомнить</label>
-                    <button type="submit" class="modal-btn_login_mobile authorisation-js">Войти</button>
-                </form>
-                <div>
-                    <input class="input-user_name deactive" placeholder="########">
-                    <button class="btn-exit deactive">Выйти</button>
-                </div>
-            </div>
-        </div>
-        <div class="modal-wrap modal-wrap_deactive modal-wrap-js">
+        <div class="modal-wrap modal-wrap_deactive">
             <form class="modal-form">
-                <p class="">Вход</p>
-                <input class="modal-input input_login-js" placeholder="Логин" type="text" required>
-                <input class="modal-input input_password-js" placeholder="Пароль" type="password" required >
+                <p>Вход</p>
+                <input class="modal-input" placeholder="Логин" type="text" required>
+                <input class="modal-input" placeholder="Пароль" type="password" required>
                 <input class="check-modal" type="checkbox" id="checkbox-id" />
                 <label for="checkbox-id" class="modal-label">Запомнить</label>
-                <button type="button" class="modal-btn authorisation-js">Войти</button>
+                <button type="button" class="modal-btn">Войти</button>
             </form>
         </div>
     </body>
 
-<link rel="stylesheet" href="styles/modal_mobile.css">
 <link rel="stylesheet" href="styles/general.css">
 <link rel="stylesheet" href="styles/header.css">
 <link rel="stylesheet" href="styles/navigation.css">

@@ -10,11 +10,6 @@
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
-@media (max-width: 426px) {
-  .modal-wrap {
-    display: none;
-  }
-}
 .modal-wrap_deactive {
   display: none;
 }
@@ -57,18 +52,38 @@
   border: none;
   border-bottom: 1px solid #333333;
 }
-.modal-btn {
-  height: 38px;
-  width: 113px;
+.input_error {
+  display: block;
+  width: 232px;
+  height: 40px;
+  border-bottom: none;
   background: #E5261E;
+  -webkit-animation: 0.1s flexer ease-out infinite;
+  animation: 0.1s flexer ease-out infinite;
+}
+@-webkit-keyframes flexer {
+  0%,
+  25% {
+    left: -1px;
+    top: -1px;
+    -webkit-transform: translateX(-4%);
+    transform: translateX(-4%);
+  }
+  50%,
+  100% {
+    left: 1px;
+    top: 1px;
+    -webkit-transform: translateX(4%);
+    transform: translateX(4%);
+  }
+}
+.modal-btn {
+  width: 113px;
+  height: 38px;
+  background: #E5261E;
+  color: #FFFFFF;
   border-radius: 4px;
   border-style: none;
-  color: #FFFFFF;
-  font-family: Rubik, sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 19px;
-  font-weight: 500;
 }
 .modal-btn:hover {
   background: #CC221B;
@@ -79,16 +94,15 @@ input[type="checkbox"] {
 .modal-label {
   width: 108px;
   height: 19px;
-  display: flex;
   margin-right: 124px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 .modal-label:before {
   display: inline-block;
   content: " ";
   width: 16px;
   height: 16px;
-  margin-right: 8px;
   border: 1px solid #333333;
   border-radius: 4px;
   vertical-align: middle;
@@ -97,7 +111,7 @@ input[type="checkbox"] {
 }
 .check-modal:checked + .modal-label:before {
   background: url(../image/Vector.png) no-repeat center;
-  background-size: 15px 11px;
+  background-size: 10px 8px;
 }
 .modal-label:disabled + .modal-label:before {
   background: #eee;
