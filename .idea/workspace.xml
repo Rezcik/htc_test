@@ -13,6 +13,7 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Less File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -70,7 +71,7 @@
       <workItem from="1601969690463" duration="7385000" />
       <workItem from="1601978619254" duration="21000" />
       <workItem from="1601987944206" duration="15000" />
-      <workItem from="1602335269081" duration="19986000" />
+      <workItem from="1602335269081" duration="20339000" />
     </task>
     <servers />
   </component>
