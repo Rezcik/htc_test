@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 311px;
+  margin: 44px auto 32px;
+}
+.nav-btn {
+  background: none;
+  border: none;
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 33px;
+  font-weight: 500;
+}
+.nav-btn_active {
+  color: #E5261E;
+  border-bottom: 2px solid #E5261E;
+  padding-bottom: 9px;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  outline-color: unset !important;
+  outline-offset: 0;
+}
+/*# sourceMappingURL=navigation.css.map */

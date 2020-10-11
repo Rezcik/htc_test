@@ -1,0 +1,244 @@
+@import "general";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  max-width: 1180px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  @media(max-width: 1200px) {
+    margin: 0 10px 0 10px;
+  }
+}
+.section-content_deactive{
+  display: none !important;
+}
+.section-title{
+  display: flex;
+  width: 1180px;
+  margin-bottom: 16px;
+  .font(24px,28px,500);
+}
+.film-elem_text{
+  color: @color-dark_gray;
+  .font(20px,24px,400);
+}
+.blackout {
+  display: none;
+  position: absolute;
+  width: 280px;
+  height: 370px;
+  border-radius: inherit;
+  color: @color-white;
+  padding: 16px;
+  background: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+}
+.section-content_film{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media(max-width: 580px){
+    justify-content: center;
+  }
+}
+.elem-film{
+  position: relative;
+  width: 280px;
+  height: 434px;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  .font(16px,22px,400);
+  &:hover .blackout{
+    display: block;
+  }
+}
+.section-img{
+  width: 280px;
+  height: 370px;
+  border-radius: inherit;
+  background: #C4C4C4;
+  color: @color-white;
+  margin-bottom: 11px;
+}
+////////////////////////////////////////////////////////////////
+
+@color-initial_comedy: #F2C94C;
+@color-end_comedy: #F29A4A ;
+
+@color-initial_dramas: #F2994A;
+@color-end_dramas: #EB5757;
+
+@color-initial_fantastic: #56CCF2;
+@color-end_fantastic: #2F80ED;
+
+@color-initial_horrors: #828282;
+@color-end_horrors: #333333;
+
+.section-elem_gradient(@color-initial, @color-end)  {
+  background: -o-linear-gradient(313.73deg, @color-initial 8.44%, @color-end 91.36%);
+  background: linear-gradient(136.27deg, @color-initial 8.44%, @color-end 91.36%);
+  opacity: 0.8;
+  -webkit-box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+}
+.genre-elem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.genre-comedy{
+  .genre-elem;
+  .section-elem_gradient(@color-initial_comedy, @color-end_comedy);
+}
+.genre-dramas{
+  .genre-elem;
+  .section-elem_gradient(@color-initial_dramas, @color-end_dramas);
+}
+.genre-fantastic{
+  .genre-elem;
+  .section-elem_gradient(@color-initial_fantastic, @color-end_fantastic);
+}
+.genre-horrors{
+  .genre-elem;
+  .section-elem_gradient(@color-initial_horrors, @color-end_horrors);
+}
+.elem-wrap{
+  position: relative;
+  width: 280px;
+  height: 208px;
+  margin-bottom: 32px;
+  border-radius: 6px;
+  &:hover .section-elem_gradient{
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.genre-img{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.genre-elem_text{
+  margin-top: 148px;
+  color: @color-white;
+  .font(20px,24px,400);
+}
+////////////////////////////////
+
+.section-content_tv{
+  max-width: 1180px;
+  height: 696px;
+  overflow-y: scroll;
+  padding-right: 8px;
+  @media(max-width: 435px){
+    padding-right: 0;
+  }
+}
+.elem-tv{
+  display: flex;
+  max-width: 1180px;
+  height: 162px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: @color-gray;
+  overflow: hidden;
+  @media(max-width: 768px){
+    height: 210px;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .elem-tv_img {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media(max-width: 930px){
+      max-width: 200px;
+    }
+    @media (max-width: 530px) {
+      display: none;
+    }
+  }
+  .tv-img_mobile{
+    display: none;
+    width: 30px;
+    height: 20px;
+    @media (max-width: 530px) {
+      display: flex;
+      margin: 0 20px;
+    }
+  }
+  .elem-tv_title {
+    display: flex;
+    margin-top: 21px;
+    margin-bottom: 17px;
+    .font(20px,24px,500);
+  }
+  .elem-tv_text {
+    display: flex;
+    flex-direction: column;
+    .font(16px,19px,400);
+  }
+  .elem-tv_channels{
+    max-width: 780px;
+    min-width: 320px;
+
+    :nth-child(n){
+      list-style-type: none;
+      margin-bottom: 12px;
+      display: flex;
+    }
+    :nth-child(-n+2) {
+      color: @color-red;
+    }
+    :nth-child(2n-1) {
+      clear: both;
+      float: left;
+      margin-right: 16px;
+    }
+  }
+}
+////////////////////////////////////////
+
+::-webkit-scrollbar {
+  width: 8px;
+  @media (max-width: 435px) {
+    display: none;
+  }
+}
+::-webkit-scrollbar-track {
+  background: @color-gray;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb {
+  border: 2px solid @color-gray;
+  height: 100px;
+  background: #BDBDBD;
+  border-radius: 4px;
+}
+

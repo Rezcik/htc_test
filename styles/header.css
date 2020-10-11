@@ -1,0 +1,123 @@
+header {
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px auto 0;
+  flex-wrap: wrap;
+}
+@media (max-width: 1200px) {
+  header {
+    margin: 32px 10px 0 10px;
+  }
+}
+.logo-text {
+  height: 24px;
+  width: 134px;
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.logo-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo-img {
+  height: 36px;
+  width: 36px;
+  margin-right: 12px;
+}
+@media (max-width: 321px) {
+  .logo-img {
+    margin-right: 2px;
+  }
+}
+.search-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 570px;
+  width: 100%;
+}
+.search-wrap .input-search {
+  width: 320px;
+  height: 25px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #333333;
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+}
+.search-wrap .btn-search {
+  width: 50px;
+  height: 19px;
+  outline: none;
+  border: none;
+  margin-left: 32px;
+  background: #FFFFFF;
+  color: #E5261E;
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+}
+@media (max-width: 954px) {
+  .search-wrap {
+    order: 1;
+    margin: 20px auto;
+    width: 80%;
+  }
+}
+.login-wrap {
+  display: flex;
+  width: 182px;
+  justify-content: flex-end;
+}
+.login-wrap :nth-child(n) {
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+}
+.login-input {
+  width: 114px;
+  height: 19px;
+  border: none;
+  margin-right: 16px;
+}
+.login-btn-exit {
+  width: 52px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  color: #E5261E;
+}
+.login-modal-btn {
+  width: 113px;
+  height: 38px;
+  background: #E5261E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+}
+.login-modal-btn:hover {
+  background: #CC221B;
+}
+@media (max-width: 426px) {
+  .login-modal-btn {
+    display: none;
+  }
+}
+.deactive {
+  display: none;
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,23 @@
+@import "general";
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  width: 311px;
+  margin: 44px auto 32px;
+}
+.nav-btn{
+  background: none;
+  border: none;
+
+  .font(28px,33px,500);
+}
+.nav-btn_active{
+  color: @color-red;
+  border-bottom: 2px solid @color-red;
+  padding-bottom: 9px;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  outline-color: unset !important;
+  outline-offset: 0;
+}
