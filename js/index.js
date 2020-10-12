@@ -69,6 +69,7 @@ function validationName(name){
             .split(/\s+/)
             .map(word => word[0].toUpperCase() + word.substring(1))
             .join(' ')
+            .replace(/(.+) (.).+/, '$1 $2.')
             .replace(/(.+) (.).+ (.).+/, '$1 $2. $3.');
         return true;
     }
@@ -85,12 +86,12 @@ function validationLogin(login){
     }
     if(login.length < 4 || login.length > 20)
     {
-        alert('В логине должен быть от 4 до 20 символов');
+        alert('В логине должено быть от 4 до 20 символов');
         return false;
     }
     if(parseInt(login.substr(0, 1)))
     {
-        alert('Логине должен начинаться с буквы');
+        alert('Логин должен начинаться с буквы');
         return false;
     }
 
