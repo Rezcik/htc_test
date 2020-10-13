@@ -19,10 +19,12 @@ main{
   display: none !important;
 }
 .section-title{
-  display: flex;
   width: 1180px;
   margin-bottom: 16px;
   .font(24px,28px,500);
+  @media(max-width: 1200px){
+    text-align: center;
+  }
 }
 .film-elem_text{
   color: @color-dark_gray;
@@ -43,6 +45,9 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media(max-width: 1200px){
+    justify-content: space-around;
+  }
   @media(max-width: 580px){
     justify-content: center;
   }
@@ -56,6 +61,9 @@ main{
   .font(16px,22px,400);
   &:hover .blackout{
     display: block;
+  }
+  @media(max-width: 1200px){
+    margin: 0 10px 32px;
   }
 }
 .section-img{
@@ -202,10 +210,12 @@ main{
     display: flex;
     flex-direction: column;
     .font(16px,19px,400);
+    @media(max-width: 530px){
+      padding: 0 20px;
+    }
   }
   .elem-tv_channels{
     max-width: 780px;
-    min-width: 320px;
 
     :nth-child(n){
       list-style-type: none;

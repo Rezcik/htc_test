@@ -1,16 +1,22 @@
 @import "general";
 
-nav{
+.nav-wrap{
   display: flex;
   justify-content: space-between;
   width: 311px;
   margin: 44px auto 32px;
+  @media(max-width: 321px){
+    padding: 0 20px;
+  }
 }
 .nav-btn{
   background: none;
   border: none;
 
   .font(28px,33px,500);
+  @media(max-width: 321px){
+    .font(25px,30px,500);
+  }
 }
 .nav-btn_active{
   color: @color-red;

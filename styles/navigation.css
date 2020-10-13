@@ -1,8 +1,13 @@
-nav {
+.nav-wrap {
   display: flex;
   justify-content: space-between;
   width: 311px;
   margin: 44px auto 32px;
+}
+@media (max-width: 321px) {
+  .nav-wrap {
+    padding: 0 20px;
+  }
 }
 .nav-btn {
   background: none;
@@ -12,6 +17,15 @@ nav {
   font-size: 28px;
   line-height: 33px;
   font-weight: 500;
+}
+@media (max-width: 321px) {
+  .nav-btn {
+    font-family: Rubik, sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 500;
+  }
 }
 .nav-btn_active {
   color: #E5261E;

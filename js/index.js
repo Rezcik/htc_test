@@ -32,7 +32,6 @@ addEventListener('click', (event) =>{
         contentTV.classList.toggle('section-content_deactive');
     }
 });
-
 buttonLogin.addEventListener('click', (event) => {
     modalWrap.classList.toggle('modal-wrap_deactive');
 
@@ -41,6 +40,9 @@ modalWrap.addEventListener('click',(event)=>{
     if(event.target === modalWrap){
         modalWrap.classList.toggle('modal-wrap_deactive');
     }
+});
+modalBtn.addEventListener('click', (event) => {
+        validationLogin(inLogin.value,inPassword.value);
 });
 addEventListener('DOMContentLoaded',(event) => {
     for(let key in localStorage){
@@ -51,17 +53,7 @@ addEventListener('DOMContentLoaded',(event) => {
     }
 });
 
-modalBtn.addEventListener('click', (event) => {
-    if(inLogin.value === user.login && inPassword.value === user.password) {
-        if (checkBox.checked) {
-            localStorage.setItem(user.login, user.name);
-        }
-        authorisation();
-    }else
-        validationLogin(inLogin.value);
-});
-
-function validationName(name){
+let validationName = (name) =>{
     let tempName = name.value;
     if(/[а-яё]{1,20}/.test(tempName)){
         user.name = tempName
@@ -76,27 +68,31 @@ function validationName(name){
     if(/[0-9]/.test(tempName)){
         return false;
     }
-}
-function validationLogin(login){
-
-    if(/^[a-zA-Z1-9]+$/.test(login) === false)
+};
+let validationLogin = (login, password) =>{
+    if(login === user.login && password === user.password) {
+        if (checkBox.checked) {
+            localStorage.setItem(user.login, user.name);
+        }
+        authorisation();
+    }
+    if(login === "" || password === "")
     {
-        alert('В логине должны быть только латинские буквы');
-        return false;
+        error('Поля логин и пароль обязательны к заполнению');
+    }
+    if(/^[a-zA-Z1-9]+$/.test(login))
+    {
+        error('В логине должны быть только латинские буквы');
     }
     if(login.length < 4 || login.length > 20)
     {
-        alert('В логине должено быть от 4 до 20 символов');
-        return false;
+        error('В логине должено быть от 4 до 20 символов');
     }
     if(parseInt(login.substr(0, 1)))
     {
-        alert('Логин должен начинаться с буквы');
-        return false;
+        error('Логин должен начинаться с буквы');
     }
-
-    return true;
-}
+};
 let authorisation = () =>{
     let insertTo = document.querySelector('.btn-wrap');
     let inputName = document.createElement('input');
@@ -134,5 +130,16 @@ let authorisation = () =>{
         buttonExit.remove();
         localStorage.removeItem(user.login);
         buttonLogin.classList.toggle('deactive');
+        insertTo.classList.remove('btn-wra_active');
     });
+};
+let error = (str) =>{
+    let message = document.createElement('div');
+    message.classList.add('error');
+    message.textContent = str;
+    modalWrap.append(message);
+
+    setTimeout(() => message.classList.add('error-click'), 0);
+    setTimeout(() => message.classList.remove('error-click'), 2500);
+    setTimeout(() => message.remove(), 2600);
 };
