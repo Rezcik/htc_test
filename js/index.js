@@ -1,18 +1,15 @@
-let domElem = document.querySelectorAll('.tab_film-js, .tab_tv-js, ' +
-                                                 '.section-content_tv, .section-content_film,' +
-                                                 '.btn-login,' +
-                                                 '.modal-wrap, .modal-input, .check-modal, .modal-btn');
-    buttonLogin = domElem[0];
-    tabFilm = domElem[1];
-    tabTV = domElem[2];
-    contentFilm = domElem[3];
-    contentGenre = domElem[4];
-    contentTV = domElem[5];
-    modalWrap = domElem[6];
-    inLogin = domElem[7];
-    inPassword = domElem[8];
-    checkBox = domElem[9];
-    modalBtn = domElem[10];
+const buttonLogin = document.querySelector('.header-btn-js');
+const tabFilm = document.querySelector('.tab_film-js');
+const tabTV = document.querySelector('.tab_tv-js');
+const contentFilm = document.querySelector('.film-js');
+const contentGenre = document.querySelector('.genre-js');
+const contentTV = document.querySelector('.tv-js');
+const modalWrap = document.querySelector('.modal-wrap');
+const inLogin = document.querySelector('.login-js');
+const inPassword = document.querySelector('.password-js');
+const checkBox = document.querySelector('.check-modal');
+const modalBtn = document.querySelector('.modal-btn-js');
+const nav = document.querySelector('.nav-wrap');
 
     user = {
         name: "Константин К.",
@@ -21,7 +18,7 @@ let domElem = document.querySelectorAll('.tab_film-js, .tab_tv-js, ' +
         password: "admin"
 };
 
-addEventListener('click', (event) =>{
+nav.addEventListener('click', (event) =>{
     let target = event.target;
     if(!target.classList.contains('nav-btn_active') && target.classList.contains('nav-btn') ){
         tabTV.classList.toggle('nav-btn_active');
@@ -47,7 +44,7 @@ modalBtn.addEventListener('click', (event) => {
 addEventListener('DOMContentLoaded',(event) => {
     for(let key in localStorage){
         if(key === user.login){
-            user.name = localStorage.getItem(user.login)
+            user.name = localStorage.getItem(user.login);
             authorisation();
         }
     }
@@ -78,25 +75,30 @@ let validationLogin = (login, password) =>{
     }
     if(login === "" || password === "")
     {
-        error('Поля логин и пароль обязательны к заполнению');
+        return error('Поля логин и пароль обязательны к заполнению');
     }
-    if(/^[a-zA-Z1-9]+$/.test(login))
+    if(!/^[a-zA-Z1-9]+$/.test(login))
     {
-        error('В логине должны быть только латинские буквы');
+        return error('В логине должны быть только латинские буквы ');
     }
     if(login.length < 4 || login.length > 20)
     {
-        error('В логине должено быть от 4 до 20 символов');
+        return error('В логине должено быть от 4 до 20 символов');
     }
     if(parseInt(login.substr(0, 1)))
     {
-        error('Логин должен начинаться с буквы');
+        return error('Логин должен начинаться с буквы');
     }
+    if(login !== user.login && password !== user.password)
+    {
+        return error('Проверьте правильность введенных данных');
+    }
+
 };
 let authorisation = () =>{
-    let insertTo = document.querySelector('.btn-wrap');
-    let inputName = document.createElement('input');
-    let buttonExit = document.createElement('button');
+    const insertTo = document.querySelector('.btn-wrap');
+    const inputName = document.createElement('input');
+    const buttonExit = document.createElement('button');
 
     buttonLogin.classList.toggle('deactive');
 
@@ -134,12 +136,13 @@ let authorisation = () =>{
     });
 };
 let error = (str) =>{
-    let message = document.createElement('div');
+    const message = document.createElement('div');
     message.classList.add('error');
     message.textContent = str;
-    modalWrap.append(message);
-
-    setTimeout(() => message.classList.add('error-click'), 0);
-    setTimeout(() => message.classList.remove('error-click'), 2500);
-    setTimeout(() => message.remove(), 2600);
+    if(modalWrap.children.length === 1){
+        modalWrap.append(message);
+        setTimeout(() => message.classList.add('error-click'), 0);
+        setTimeout(() => message.classList.remove('error-click'), 2500);
+        setTimeout(() => message.remove(), 2600);
+    }
 };

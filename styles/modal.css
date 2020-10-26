@@ -136,9 +136,11 @@ input[type="checkbox"] {
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
+  pointer-events: none;
 }
 .error-click {
   opacity: 1;
-  bottom: 250px;
+  bottom: 35%;
+  pointer-events: none;
 }
 /*# sourceMappingURL=modal.css.map */

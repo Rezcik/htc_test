@@ -1,11 +1,11 @@
 @import "general";
 
 *{
+  user-select: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 main{
   max-width: 1180px;
   display: flex;
@@ -27,7 +27,7 @@ main{
   }
 }
 .film-elem_text{
-  color: @color-dark_gray;
+  color: @color-shadow;
   .font(20px,24px,400);
 }
 .blackout {
@@ -154,13 +154,15 @@ main{
 ////////////////////////////////
 
 .section-content_tv{
-  max-width: 1180px;
-  height: 696px;
-  overflow-y: scroll;
-  padding-right: 8px;
+  position: relative;
   @media(max-width: 435px){
     padding-right: 0;
   }
+}
+.content_tv-wrap{
+  overflow-y: scroll;
+  max-width: 1180px;
+  height: 696px;
 }
 .elem-tv{
   display: flex;
@@ -232,8 +234,9 @@ main{
     }
   }
 }
-////////////////////////////////////////
 
+////////////////////////////////////////
+/*
 ::-webkit-scrollbar {
   width: 8px;
   @media (max-width: 435px) {
@@ -251,4 +254,4 @@ main{
   background: #BDBDBD;
   border-radius: 4px;
 }
-
+*/

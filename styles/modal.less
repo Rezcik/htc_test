@@ -53,7 +53,7 @@
 
   outline: none;
   border: none;
-  border-bottom: 1px solid @color-dark_gray;
+  border-bottom: 1px solid @color-shadow;
 }
 .input_error{
   display: block;
@@ -136,8 +136,10 @@ input[type="checkbox"] {
   transition: .5s;
   padding: 5px;
   .font(14px,19px,400);
+  pointer-events: none
 }
 .error-click{
   opacity: 1;
-  bottom: 250px;
+  bottom: 35%;
+  pointer-events: none;
 }
