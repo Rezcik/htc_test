@@ -12,17 +12,22 @@ html {
 .scroll {
   box-sizing: unset;
   position: absolute;
-  width: 28px;
+  width: 8px;
   height: 696px;
   right: -18px;
   top: 0;
   background: #F2F2F2;
   border-radius: 2px;
 }
+@media (max-width: 1023px) {
+  .scroll {
+    display: none;
+  }
+}
 .scroll-thumb {
   box-sizing: unset;
   position: absolute;
-  width: 24px;
+  width: 4px;
   height: 500px;
   background: #BDBDBD;
   left: 2px;

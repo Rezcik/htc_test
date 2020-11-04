@@ -11,7 +11,6 @@ let scrollMove = (event) => {
     if(coord > 192){ coord = 192; return scrollThumb.style.transform = 'translate( 0,' + 192 + 'px)';}
     if(coord < 2){ coord = 2; return scrollThumb.style.transform = 'translate( 0,' + 2 + 'px)';}
     scrollThumb.style.transform += 'translate( 0,' + event + 'px)';
-    console.log(coord);
 };
 let scrollClick = (event) =>{
     scrollThumb.style.transform = 'translate( 0,' + event + 'px)';

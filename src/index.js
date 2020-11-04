@@ -5,50 +5,19 @@ const contentFilm = document.querySelector('.film-js');
 const contentGenre = document.querySelector('.genre-js');
 const contentTV = document.querySelector('.tv-js');
 const modalWrap = document.querySelector('.modal-wrap');
+const modal = document.querySelector('.modal-form-js');
 const inLogin = document.querySelector('.login-js');
 const inPassword = document.querySelector('.password-js');
 const checkBox = document.querySelector('.check-modal');
 const modalBtn = document.querySelector('.modal-btn-js');
 const nav = document.querySelector('.nav-wrap');
 
-    user = {
+let user = {
         name: "Константин К.",
         remember: false,
         login: "admin",
         password: "admin"
 };
-
-nav.addEventListener('click', (event) =>{
-    let target = event.target;
-    if(!target.classList.contains('nav-btn_active') && target.classList.contains('nav-btn') ){
-        tabTV.classList.toggle('nav-btn_active');
-        tabFilm.classList.toggle('nav-btn_active');
-
-        contentFilm.classList.toggle('section-content_deactive');
-        contentGenre.classList.toggle('section-content_deactive');
-        contentTV.classList.toggle('section-content_deactive');
-    }
-});
-buttonLogin.addEventListener('click', (event) => {
-    modalWrap.classList.toggle('modal-wrap_deactive');
-
-});
-modalWrap.addEventListener('click',(event)=>{
-    if(event.target === modalWrap){
-        modalWrap.classList.toggle('modal-wrap_deactive');
-    }
-});
-modalBtn.addEventListener('click', (event) => {
-        validationLogin(inLogin.value,inPassword.value);
-});
-addEventListener('DOMContentLoaded',(event) => {
-    for(let key in localStorage){
-        if(key === user.login){
-            user.name = localStorage.getItem(user.login);
-            authorisation();
-        }
-    }
-});
 
 let validationName = (name) =>{
     let tempName = name.value;
@@ -146,3 +115,36 @@ let error = (str) =>{
         setTimeout(() => message.remove(), 2600);
     }
 };
+
+nav.addEventListener('click', (event) =>{
+    let target = event.target;
+    if(!target.classList.contains('nav-btn_active') && target.classList.contains('nav-btn') ){
+        tabTV.classList.toggle('nav-btn_active');
+        tabFilm.classList.toggle('nav-btn_active');
+
+        contentFilm.classList.toggle('section-content_deactive');
+        contentGenre.classList.toggle('section-content_deactive');
+        contentTV.classList.toggle('section-content_deactive');
+    }
+});
+buttonLogin.addEventListener('click', (event) => {
+    modalWrap.classList.toggle('modal-wrap_deactive');
+
+});
+modalWrap.addEventListener('click',(event)=>{
+    if(event.target === modalWrap){
+        modalWrap.classList.toggle('modal-wrap_deactive');
+    }
+});
+modalBtn.addEventListener('click', (event) => {
+    validationLogin(inLogin.value,inPassword.value);
+});
+
+(function() {
+    for(let key in localStorage){
+        if(key === user.login){
+            user.name = localStorage.getItem(user.login);
+            authorisation();
+        }
+    }
+}());

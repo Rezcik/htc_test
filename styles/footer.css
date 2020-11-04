@@ -38,7 +38,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 19px;
@@ -51,7 +51,7 @@ footer {
   margin-bottom: 25px;
   text-decoration: none;
   color: #1F4766;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 19px;

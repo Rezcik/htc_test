@@ -12,7 +12,7 @@
 .nav-btn {
   background: none;
   border: none;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 28px;
   line-height: 33px;
@@ -20,7 +20,7 @@
 }
 @media (max-width: 321px) {
   .nav-btn {
-    font-family: Rubik, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-size: 25px;
     line-height: 30px;

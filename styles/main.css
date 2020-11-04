@@ -21,7 +21,7 @@ main {
 .section-title {
   width: 1180px;
   margin-bottom: 16px;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
@@ -34,7 +34,7 @@ main {
 }
 .film-elem_text {
   color: #333333;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -72,7 +72,7 @@ main {
   height: 434px;
   margin-bottom: 32px;
   border-radius: 8px;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 22px;
@@ -208,7 +208,7 @@ main {
 .genre-elem_text {
   margin-top: 148px;
   color: #FFFFFF;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -276,7 +276,7 @@ main {
   display: flex;
   margin-top: 21px;
   margin-bottom: 17px;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -285,7 +285,7 @@ main {
 .elem-tv .elem-tv_text {
   display: flex;
   flex-direction: column;
-  font-family: Rubik, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 19px;
