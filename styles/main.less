@@ -2,9 +2,16 @@
 
 *{
   user-select: none;
+  -ms-user-select: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  &:visited{
+    color: unset;
+  }
 }
 main{
   max-width: 1180px;
@@ -160,6 +167,7 @@ main{
   }
 }
 .content_tv-wrap{
+  scrollbar-width: none;
   overflow-y: scroll;
   max-width: 1180px;
   height: 696px;
@@ -234,24 +242,3 @@ main{
     }
   }
 }
-
-////////////////////////////////////////
-/*
-::-webkit-scrollbar {
-  width: 8px;
-  @media (max-width: 435px) {
-    display: none;
-  }
-}
-::-webkit-scrollbar-track {
-  background: @color-gray;
-  border-radius: 2px;
-  background-clip: padding-box;
-}
-::-webkit-scrollbar-thumb {
-  border: 2px solid @color-gray;
-  height: 100px;
-  background: #BDBDBD;
-  border-radius: 4px;
-}
-*/

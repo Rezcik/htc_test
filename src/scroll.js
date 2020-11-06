@@ -16,7 +16,8 @@ let scrollClick = (event) =>{
     scrollThumb.style.transform = 'translate( 0,' + event + 'px)';
 };
 scrollingContent.addEventListener('wheel', (event)=>{
-        scrollMove(event.deltaY);
+        let scroll = event.deltaY.toString().replace(/[0-9]/g, '') + 125;
+        scrollMove(Number(scroll));
 
 });
 
