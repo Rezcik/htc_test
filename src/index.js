@@ -76,6 +76,7 @@ let authorisation = () =>{
 
     inputName.value = user.name;
     inputName.setAttribute('onfocus', 'this.select()');
+    inputName.setAttribute('maxlength', '14');
     inputName.classList.add('input_user');
 
     insertTo.append(inputName);
