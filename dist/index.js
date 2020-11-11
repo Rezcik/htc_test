@@ -40,6 +40,13 @@ modalWrap.addEventListener('click', function (event) {
         modalWrap.classList.toggle('modal-wrap_deactive');
     }
 });
+document.addEventListener('keyup',function(event){
+    if (event.key === 'Esc' && modalWrap.classList.contains('modal-wrap_deactive') === false ) {
+        modalWrap.classList.add('modal-wrap_deactive');
+        (function del() {
+            document.removeEventListener("keyup",del);
+        }());
+    }});
 modalBtn.addEventListener('click', function (event) {
     validationLogin(inLogin.value, inPassword.value);
 });
@@ -83,7 +90,7 @@ var validationLogin = function validationLogin(login, password) {
     if (parseInt(login.substr(0, 1))) {
         return error('Логин должен начинаться с буквы');
     }
-    if (login !== user.login && password !== user.password) {
+    if (login !== user.login || password !== user.password) {
         return error('Проверьте правильность введенных данных');
     }
 };
@@ -99,10 +106,11 @@ var authorisation = function authorisation() {
 
     inputName.value = user.name;
     inputName.setAttribute('onfocus', 'this.select()');
+    inputName.setAttribute('maxlength', '14');
     inputName.classList.add('input_user');
 
-    insertTo.append(inputName);
-    insertTo.append(buttonExit);
+    insertTo.appendChild(inputName);
+    insertTo.appendChild(buttonExit);
     insertTo.classList.toggle('btn-wra_active');
 
     modalWrap.classList.add('modal-wrap_deactive');
@@ -120,8 +128,8 @@ var authorisation = function authorisation() {
         }
     });
     buttonExit.addEventListener('click', function (event) {
-        inputName.remove();
-        buttonExit.remove();
+        insertTo.removeChild(inputName);
+        insertTo.removeChild(buttonExit);
         localStorage.removeItem(user.login);
         buttonLogin.classList.toggle('deactive');
         insertTo.classList.remove('btn-wra_active');
@@ -144,3 +152,11 @@ var error = function error(str) {
         }, 2600);
     }
 };
+(function() {
+    for(let key in localStorage){
+        if(key === user.login){
+            user.name = localStorage.getItem(user.login);
+            authorisation();
+        }
+    }
+}());

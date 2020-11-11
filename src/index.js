@@ -58,7 +58,7 @@ let validationLogin = (login, password) =>{
     {
         return error('Логин должен начинаться с буквы');
     }
-    if(login !== user.login && password !== user.password)
+    if(login !== user.login || password !== user.password)
     {
         return error('Проверьте правильность введенных данных');
     }
@@ -137,6 +137,14 @@ modalWrap.addEventListener('click',(event)=>{
         modalWrap.classList.toggle('modal-wrap_deactive');
     }
 });
+
+document.addEventListener('keyup',(event)=>{
+    if (event.key === 'Esc' && modalWrap.classList.contains('modal-wrap_deactive') === false ) {
+        modalWrap.classList.add('modal-wrap_deactive');
+        (function del() {
+            document.removeEventListener("keyup",del);
+        }());
+    }});
 modalBtn.addEventListener('click', (event) => {
     validationLogin(inLogin.value,inPassword.value);
 });
